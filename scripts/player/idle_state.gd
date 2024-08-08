@@ -23,8 +23,4 @@ func update_state(delta):
 		player.get_node("StateMachine").set_state("RunState")#Transita para o estado de corrida se movendo para a esquerda ou direita.
 	elif Input.is_action_just_pressed("jump") and player.is_on_floor():
 		player.get_node("StateMachine").set_state("JumpState")#Transita para o estado de pulo se pressionar 'jump' e estiver no chão.
-	elif Input.is_action_just_pressed("dash") and player.can_dash:
-		player.get_node("StateMachine").set_state("DashState")#Transita para o estado de dash se pressionar 'dash'.
-	elif Input.is_action_pressed("crouch"):
-		player.get_node("StateMachine").set_state("CrouchState") #Transita para o estado de agachamento se pressionar 'crouch'.
-
+	

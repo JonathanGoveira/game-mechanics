@@ -37,11 +37,3 @@ func update_state(delta):
 				)
 		):
 		player.get_node("StateMachine").set_state("JumpState")  # Muda para o estado de salto se a ação de salto for pressionada
-	
-	# Verifica se a tecla de dash foi pressionada
-	elif Input.is_action_just_pressed("dash") and player.can_dash:
-		player.get_node("StateMachine").set_state("DashState")  # Muda para o estado de dash se a ação de dash for pressionada
-	
-	# Verifica se a tecla de agachar foi pressionada
-	elif Input.is_action_pressed("crouch"):
-		player.get_node("StateMachine").set_state("CrouchState")  # Muda para o estado de agachamento se a ação de agachamento for pressionada

@@ -36,7 +36,7 @@ func _ready():
 
 func _physics_process(delta):
 	move_and_slide() # move o player
-	if not is_on_floor() and state_machine.get_state() != "DashState": # verifica se o player não está no chão e não está no dash
+	if not is_on_floor(): # verifica se o player não está no chão e não está no dash
 		apply_gravity(delta) # aplica a fisica caso o player não esteja no chão e não está no dash (aéreo)
 	coyote_time()
 	
