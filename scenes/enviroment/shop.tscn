@@ -1,9 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://creuu8w8jpigd"]
+[gd_scene load_steps=9 format=3 uid="uid://creuu8w8jpigd"]
 
 [ext_resource type="Texture2D" uid="uid://bqudr67ag3qur" path="res://assets/Enviroment/decorations/shop_anim.png" id="1_6c2k8"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6o8fd"]
-size = Vector2(101, 77)
 
 [sub_resource type="Animation" id="Animation_witnu"]
 resource_name = "idle"
@@ -67,11 +64,22 @@ _data = {
 "idle": SubResource("Animation_witnu")
 }
 
-[node name="shop" type="Area2D"]
+[sub_resource type="Gradient" id="Gradient_pk05l"]
+offsets = PackedFloat32Array(0, 0.782609)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 25.5)
-shape = SubResource("RectangleShape2D_6o8fd")
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_dw12h"]
+gradient = SubResource("Gradient_pk05l")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_em81s"]
+size = Vector2(92, 43)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6o8fd"]
+size = Vector2(116, 11)
+
+[node name="shop" type="Area2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_6c2k8")
@@ -81,3 +89,35 @@ hframes = 6
 libraries = {
 "": SubResource("AnimationLibrary_wsqt6")
 }
+autoplay = "idle"
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(49, 36)
+color = Color(1, 1, 0.505882, 1)
+energy = 2.0
+texture = SubResource("GradientTexture2D_dw12h")
+
+[node name="PointLight2D2" type="PointLight2D" parent="."]
+position = Vector2(-48, 36)
+color = Color(1, 1, 0.505882, 1)
+energy = 2.0
+texture = SubResource("GradientTexture2D_dw12h")
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(0, 42.5)
+shape = SubResource("RectangleShape2D_em81s")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1, 14.5)
+shape = SubResource("RectangleShape2D_6o8fd")
+one_way_collision = true
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+scale = Vector2(0.88, 1)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(1, -15)
+shape = SubResource("RectangleShape2D_6o8fd")
+one_way_collision = true
