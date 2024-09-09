@@ -39,7 +39,8 @@ func _physics_process(delta):
 	if not is_on_floor(): # verifica se o player não está no chão e não está no dash
 		apply_gravity(delta) # aplica a fisica caso o player não esteja no chão e não está no dash (aéreo)
 	coyote_time()
-	
+	print(max_move_speed)
+	#print(collision)
 	
 func apply_gravity(delta): # função para aplicar a gravidade
 	if velocity.y > 0 and state_machine.get_state() != "DashState": # verifica se player está caindo

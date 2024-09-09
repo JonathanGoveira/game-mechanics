@@ -37,3 +37,4 @@ func update_state(delta):
 				)
 		):
 		player.get_node("StateMachine").set_state("JumpState")  # Muda para o estado de salto se a ação de salto for pressionada
+	

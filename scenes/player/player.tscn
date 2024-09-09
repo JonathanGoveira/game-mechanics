@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://k6g5aiw4uo4l"]
+[gd_scene load_steps=17 format=3 uid="uid://k6g5aiw4uo4l"]
 
 [ext_resource type="Script" path="res://scripts/player/player.gd" id="1_q7e7t"]
 [ext_resource type="Texture2D" uid="uid://dyvluvlslg3il" path="res://assets/player/char_blue_1.png" id="1_qxhnm"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://scripts/player/idle_state.gd" id="5_xksyf"]
 [ext_resource type="Script" path="res://scripts/player/run_state.gd" id="6_cqxuu"]
 [ext_resource type="Script" path="res://scripts/player/jump_state.gd" id="8_53vk6"]
+[ext_resource type="Script" path="res://scripts/player/push_state.gd" id="9_26ki8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pcah3"]
 size = Vector2(15, 30)
@@ -195,3 +196,6 @@ script = ExtResource("6_cqxuu")
 
 [node name="JumpState" type="Node" parent="StateMachine"]
 script = ExtResource("8_53vk6")
+
+[node name="PushState" type="Node" parent="StateMachine"]
+script = ExtResource("9_26ki8")
